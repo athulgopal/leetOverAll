@@ -17,19 +17,18 @@ public class LookandSay
 	public static void main(String[] args)
 	{
 		LookandSay lookandSay = new LookandSay();
-		lookandSay.lookANdSay(6);
+		lookandSay.lookANdSay(10);
 	}
 
 	public void lookANdSay(int count)
 	{
-
 		String value = "1";
 		System.out.println(value + "  ");
 		while (count > 1)
 		{
 			char[] arr = value.toCharArray();
+			value = "";
 			int valCount = 0;
-			int result = 0;
 			int prev = arr[0] - 48;
 			for (int i = 0; i < arr.length; i++)
 			{
@@ -40,17 +39,16 @@ public class LookandSay
 				}
 				else
 				{
-					result = result * 10 + valCount;
-					result = result * 10 + (arr[i - 1] - 48);
+					value = value + valCount;
+					value = value + (arr[i - 1] - 48);
 					prev = arr[i] - 48;
+					valCount = 1;
 				}
 			}
 
-			result = result * 10 + valCount;
-			result = result * 10 + prev;
-
-			value = result + "";
-			System.out.println(result + "  ");
+			value = value + valCount;
+			value = value + prev;
+			System.out.println(value + "  ");
 			count--;
 
 		}
