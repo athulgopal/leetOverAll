@@ -17,15 +17,16 @@ public class LookandSay
 	public static void main(String[] args)
 	{
 		LookandSay lookandSay = new LookandSay();
-		lookandSay.lookANdSay(10);
+		lookandSay.lookANdSay(15);
 	}
 
 	public void lookANdSay(int count)
 	{
+		int totlaVal = 1;
 		String value = "1";
-		System.out.println(value + "  ");
-		while (count > 1)
+		while (count > 0)
 		{
+			System.out.println(totlaVal+": "+value);
 			char[] arr = value.toCharArray();
 			value = "";
 			int valCount = 0;
@@ -48,8 +49,8 @@ public class LookandSay
 
 			value = value + valCount;
 			value = value + prev;
-			System.out.println(value + "  ");
 			count--;
+			totlaVal++;
 
 		}
 
